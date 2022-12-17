@@ -1,0 +1,11 @@
+body{
+    direction: ltr;
+}
+
+
+.side-menu{
+    left:0;
+    right:unset;
+}
+
+

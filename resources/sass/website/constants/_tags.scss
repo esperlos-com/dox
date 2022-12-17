@@ -1,0 +1,66 @@
+body {
+    font-family: iransans, serif;
+}
+
+button {
+    font-family: iransans, serif;
+    font-weight: bold;
+    background:transparent;
+    border: none;
+    cursor:pointer;
+}
+
+
+
+article,div, footer, header{
+    box-sizing: border-box;
+}
+
+
+nav, ul, li, body, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+}
+
+
+input {
+    background: transparent;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+select {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+code{
+    background: black;
+    color:white;
+    padding:10px;
+}
+
+a::before {
+    content:"#"
+}

@@ -1,0 +1,53 @@
+#ma-alert{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 15px 10px ;
+    box-sizing: border-box;
+    min-width: 200px;
+    border-radius: 20px;
+
+
+}
+
+#ma-alert.error{
+    background: red;
+    box-shadow: 0 0 9px 0px red;
+}
+#ma-alert.success{
+    background: green;
+    box-shadow: 0 0 9px 0px green;
+}
+
+#ma-alert p{
+    color:white !important;
+    margin: 0;
+    text-align: center;
+}
+
+.show-anim{
+    animation: maAlertAnimationShow 1s;
+}
+
+.hide-anim{
+    animation: maAlertAnimationHide 1s forwards;
+}
+
+@keyframes maAlertAnimationShow {
+    0%{
+        transform: translateY(200px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes maAlertAnimationHide {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(200px);
+
+    }
+}
