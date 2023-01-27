@@ -1057,11 +1057,24 @@ li, p, button {
   width: 300px;
   top: 64px;
   bottom: 0;
+  padding-bottom: 64px;
 }
 #aside ul {
   -webkit-margin-start: 0.9rem;
           margin-inline-start: 0.9rem;
   margin-top: 0.9rem;
+}
+
+body[class*=direction-rtl] #aside {
+  direction: ltr;
+}
+
+body[class*=direction-ltr] #aside {
+  direction: rtl;
+}
+
+#aside {
+  overflow: scroll;
 }
 
 @media screen and (min-width: 768px) {
