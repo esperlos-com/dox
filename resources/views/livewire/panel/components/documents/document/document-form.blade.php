@@ -130,11 +130,10 @@
                         input.setAttribute('accept', 'image/*');
                         input.onchange = function() {
                             var file = this.files[0];
-
                             var reader = new FileReader();
                             reader.readAsDataURL(file);
                             reader.onload = function () {
-                                var id = 'blobid' + (new Date()).getTime();
+                                var id = 'blobid' + (new Date()).getTime()+file.name;
                                 var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
                                 var base64 = reader.result.split(',')[1];
                                 var blobInfo = blobCache.create(id, file, base64);
