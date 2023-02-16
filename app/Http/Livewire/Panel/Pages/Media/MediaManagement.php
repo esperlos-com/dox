@@ -8,6 +8,6 @@ class MediaManagement extends Component
 {
     public function render()
     {
-        return view('livewire.panel.pages.media.media-management');
+        return view('livewire.panel.pages.media.media-management')->layout('layouts.panel.layout-panel');
     }
 }

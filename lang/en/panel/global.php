@@ -3,6 +3,10 @@
 return [
 
     'app_name' => 'dox',
+    'loading' => 'loading...',
+    'profile' => 'profile',
+    'setting' => 'setting',
+    'logout' => 'logout',
     'alert' => [
         'success' => 'operation done successfully'
     ],
@@ -24,6 +28,7 @@ return [
         'main_text' => 'main text',
         'translated_text' => 'translated text',
 
+
     ],
 
     'sidebar' => [
@@ -40,12 +45,55 @@ return [
 
         ]
     ],
+
+    'dashboard' => [
+        'first_box' => [
+            'title' => 'dox is awesome',
+            'content' => 'by dox, share your document easy ;)'
+        ]
+    ],
     'document' => [
         'content' => [
             'title' => 'document list',
             'form' => [
                 'content' => 'content'
             ]
+        ],
+        'form' => [
+            'title'=>'submit document',
+            'content' => 'content',
+            'menu' => 'menu',
+            'select_menu' => "select menu"
+        ],
+        'breadcrumbs' => [
+            'title' => 'document',
+            'subtitle1' => 'document management',
+            'subtitle2' => 'document',
+        ]
+    ],
+    'menu' => [
+        'content' => [
+            'title' => 'menu list',
+
+        ],
+        'add_submenu_modal' => [
+            'title' => 'add submenu',
+            'form' => [
+                'title' => 'title',
+                'slug' =>'slug (if it is not submenu)'
+            ],
+        ],
+        'add_modal' => [
+            'title' => 'add menu',
+            'form' => [
+                'title' => 'title',
+                'slug' =>'slug (if it is not submenu)'
+            ],
+        ],
+        'breadcrumbs' => [
+            'title' => 'menu',
+            'subtitle1' => 'menu management',
+            'subtitle2' => 'menu',
         ]
     ],
     'language' => [
@@ -94,6 +142,18 @@ return [
             'subtitle1' => 'version management',
             'subtitle2' => 'version',
         ]
+    ],
+    'media' => [
+        'content' => [
+            'title' => 'media list',
+        ],
+        'breadcrumbs' => [
+            'title' => 'media',
+            'subtitle1' => 'media management',
+            'subtitle2' => 'media',
+        ]
     ]
+
+
 
 ];

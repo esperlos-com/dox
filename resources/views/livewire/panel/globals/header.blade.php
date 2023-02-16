@@ -13,14 +13,14 @@
                     <li class="nav-item dropdown">
                         <a href="#" data-toggle="dropdown">
                             <figure class="avatar avatar-sm avatar-state-success">
-                                <img class="rounded-circle" src="assets/media/image/avatar.jpg" alt="...">
+                                <img class="rounded-circle" src="{{asset('assets/media/image/avatar.jpg')}}" alt="...">
                             </figure>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="profile.html" class="dropdown-item">پروفایل</a>
-                            <a href="#" data-sidebar-target="#settings" class="sidebar-open dropdown-item">تنظیمات</a>
+                            <a href="#" class="dropdown-item text-center">@lang('panel/global.profile')</a>
+                            <a href="#" data-sidebar-target="#settings" class="sidebar-open dropdown-item text-center">@lang('panel/global.setting')</a>
                             <div class="dropdown-divider"></div>
-                            <a wire:click="logout" href="#" class="text-danger dropdown-item">خروج</a>
+                            <a wire:click="logout" href="#" class="text-danger dropdown-item text-center">@lang('panel/global.logout')</a>
                         </div>
                     </li>
                 </ul>
@@ -53,7 +53,7 @@
             <div class="header-logo">
                 <a href="#">
 {{--                    <img src="{{asset('assets/media/image/logo.png')}}" alt="...">--}}
-                    <span class="logo-text d-none d-lg-block">فلاتر پنل</span>
+                    <span class="logo-text d-none d-lg-block">@lang('panel/global.app_name')</span>
                 </a>
             </div>
 

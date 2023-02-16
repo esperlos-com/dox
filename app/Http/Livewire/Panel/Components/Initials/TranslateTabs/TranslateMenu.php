@@ -4,15 +4,17 @@ namespace App\Http\Livewire\Panel\Components\Initials\TranslateTabs;
 
 use App\Http\Helpers\Show;
 use App\Http\Helpers\Strings;
-use App\Models\Language;
 use App\Models\Menu;
 use App\Models\MenuTl;
 use App\Models\Setting;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class TranslateMenu extends Component
 {
+    use WithPagination;
 
+    protected $listeners = ['refreshComponent' => '$refresh'];
 
     public $selectedItemId;
 
@@ -27,12 +29,19 @@ class TranslateMenu extends Component
     ];
 
 
+    public function paginationView()
+    {
+        return 'components.pagination-view';
+    }
+
 
 
     public function mount(){
 
         $this->setting = Setting::find(1);
     }
+
+
 
 
     public function selectedItem($menuId)

@@ -32,10 +32,7 @@ class LanguageContent extends Component
 
 
 
-    public function paginationView()
-    {
-        return 'components.pagination-view';
-    }
+
 
     public function mount()
     {

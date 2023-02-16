@@ -17,7 +17,7 @@ class Show
     const ALERT_SUCCESS_CUSTOM = 'success-custom';
     const ALERT_ROUTED_SUCCESS_CUSTOM = 'routed-success-custom';
     const LOGIN_ERROR = 'login-error';
-    const PAGINATE_COUNT = 10;
+    const PAGINATE_COUNT = 12;
 
     public static function alert($type, $message = '', $route = null)
     {

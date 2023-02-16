@@ -4,7 +4,7 @@
     <div class="card-body">
 
         <div style="display:flex; justify-content:space-between;align-items:start">
-            <h5 class="card-title">لیست دسته بندی نوع سایت</h5>
+            <h5 class="card-title">@lang('panel/global.menu.content.title')</h5>
             <a data-toggle="modal" data-target="#add" wire:click="selectedItem(null)"
                class="btn btn-success text-white ">
                 <i class="ti-plus"></i>
@@ -25,20 +25,20 @@
 
                         <a data-toggle="modal" data-target="#submenu"
                            wire:click.prevent="selectedItemSubmenu({{$mainItem->id}})"
-                           class="btn btn-success text-white">
+                           class="btn mx-1 btn-success text-white">
                             <i class="ti-plus"></i>
                         </a>
 
                         <a data-toggle="modal" data-target="#add"
                            wire:click.prevent="selectedItem({{$mainItem->id}})"
-                           class="mr-1 btn btn-success text-white">
+                           class="btn mx-1 btn-success text-white">
                             <i class=" ti-pencil"></i>
                         </a>
 
 
                         <a data-toggle="modal" data-target="#deleteModal"
                            wire:click.prevent="selectedItem('{{$mainItem->id}}')"
-                           class="btn mr-1 btn-danger text-white">
+                           class="btn mx-1 btn-danger text-white">
                             <i class="ti-trash"></i>
                         </a>
                     </div>
@@ -56,7 +56,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">افزودن زیر منو</h5>
+                    <h5 class="modal-title">@lang('panel/global.menu.add_submenu_modal.title')</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <i aria-hidden="true" class="ki ki-close"></i>
                     </button>
@@ -68,9 +68,9 @@
 
                         <div class="col-xl-5">
                             <div class="form-group">
-                                <label for="title">عنوان</label>
+                                <label for="title">@lang('panel/global.menu.add_submenu_modal.form.title')</label>
                                 <input wire:model.defer="menu.title" type="text" class="form-control"
-                                       id="title" placeholder="عنوان">
+                                       id="title" placeholder="@lang('panel/global.menu.add_submenu_modal.form.title')">
 
                                 @error('menu.title')
                                 <x-error-message>{{$message}}</x-error-message>@enderror
@@ -79,9 +79,9 @@
 
                         <div class="col-xl-5">
                             <div class="form-group">
-                                <label for="slug">شناسه لینک(در صورتی که زیر فهرست ندارید)</label>
+                                <label for="slug">@lang('panel/global.menu.add_submenu_modal.form.slug')</label>
                                 <input wire:model.defer="menu.slug" type="text" class="form-control"
-                                       id="slug" placeholder="شناسه لینک(در صورتی که زیر فهرست ندارید)">
+                                       id="slug" placeholder="@lang('panel/global.menu.add_submenu_modal.form.slug')">
 
                                 @error('menu.slug')
                                 <x-error-message>{{$message}}</x-error-message>@enderror
@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-xl-2 ">
                             <button type="button" class="btn btn-primary font-weight-bold form-group"
-                                    wire:click="submit(true)">تایید
+                                    wire:click="submit(true)">@lang('panel/global.button.submit')
                             </button>
                         </div>
                     </div>
@@ -129,7 +129,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">بستن
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">
+                        @lang('panel/global.button.close')
                     </button>
                 </div>
             </div>
@@ -147,7 +148,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">افزودن زبان</h5>
+                    <h5 class="modal-title">@lang('panel/global.menu.add_modal.title')</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <i aria-hidden="true" class="ki ki-close"></i>
                     </button>
@@ -160,9 +161,9 @@
 
                         <div class="col-xl-6">
                             <div class="form-group">
-                                <label for="title">عنوان</label>
+                                <label for="title">@lang('panel/global.menu.add_submenu_modal.form.title')</label>
                                 <input wire:model.defer="menu.title" type="text" class="form-control"
-                                       id="title" placeholder="عنوان">
+                                       id="title" placeholder="@lang('panel/global.menu.add_submenu_modal.form.title')">
 
                                 @error('menu.title')
                                 <x-error-message>{{$message}}</x-error-message>@enderror
@@ -171,9 +172,9 @@
 
                         <div class="col-xl-6">
                             <div class="form-group">
-                                <label for="slug">شناسه لینک(در صورتی که زیر فهرست ندارید)</label>
+                                <label for="slug">@lang('panel/global.menu.add_submenu_modal.form.slug')</label>
                                 <input wire:model.defer="menu.slug" type="text" class="form-control"
-                                       id="slug" placeholder="شناسه لینک(در صورتی که زیر فهرست ندارید)">
+                                       id="slug" placeholder="@lang('panel/global.menu.add_submenu_modal.form.slug')">
 
                                 @error('menu.slug')
                                 <x-error-message>{{$message}}</x-error-message>@enderror
@@ -183,10 +184,11 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">بستن
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">
+                        @lang('panel/global.button.close')
                     </button>
                     <button type="button" class="btn btn-primary font-weight-bold"
-                            wire:click="submit">تایید
+                            wire:click="submit">@lang('panel/global.button.submit')
                     </button>
                 </div>
             </div>

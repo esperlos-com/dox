@@ -4,7 +4,7 @@
 
 
         <div style="display:flex; justify-content:space-between;align-items:start">
-            <h5 class="card-title">فرم پست ها</h5>
+            <h5 class="card-title">@lang('panel/global.document.form.title')</h5>
             <a href="{{$isFromTranslate?$previousUrl:$urlWithoutParam}}"
                class="btn btn-primary text-white ">
                 <i class="ti-arrow-left"></i>
@@ -18,10 +18,10 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div wire:ignore class="form-group">
-                        <label class="required" for="MenuId">منو</label>
+                        <label class="required" for="MenuId">@lang('panel/global.document.form.menu')</label>
                         <select wire:model.defer="document.menu_id" class="form-control" id="MenuId">
 
-                            <option value="" selected>منو را انتخاب نمایید
+                            <option value="" selected>@lang('panel/global.document.form.select_menu')
                             </option>
 
                             @foreach($menus as $item)
@@ -55,14 +55,21 @@
                 <div wire.ignore class="col-xl-12">
 
                     <div class="form-group">
-                        <label for="content">نوشته</label>
-                        <textarea wire:model.defer="document.content" id="content"></textarea>
+                        <label for="content">@lang('panel/global.document.form.content')</label>
+                        <textarea
+                            @if($isFromTranslate)
+                            wire:model.defer="translatedContent"
+                            @else
+                            wire:model.defer="document.content"
+                            @endif
+
+                            id="content"></textarea>
                     </div>
                 </div>
             </div>
 
 
-            <button type="submit" class="btn btn-primary">ثبت</button>
+            <button type="submit" class="btn btn-primary">@lang('panel/global.button.submit')</button>
         </form>
 
 
@@ -90,8 +97,8 @@
                     images_file_types: 'jpeg,jpg,png,gif',
                     toolbar: ['styleselect fontselect fontsizeselect',
                         'undo redo | cut copy paste | bold italic | link image | alignleft aligncenter alignright alignjustify',
-                        'bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code | anchor | codesample '],
-                    plugins: 'advlist autolink link image lists charmap print preview code anchor codesample',
+                        'bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code | anchor | codesample | ltr rtl'],
+                    plugins: 'advlist autolink link image lists charmap print preview code anchor codesample directionality',
                     image_title: true,
                     automatic_uploads: true,
                     images_upload_url: 'upload',
@@ -105,7 +112,7 @@
                         xhr.open('POST', '/document-management/upload');
                         var token = '{{ csrf_token() }}';
                         xhr.setRequestHeader("X-CSRF-Token", token);
-                        xhr.onload = function() {
+                        xhr.onload = function () {
                             var json;
                             if (xhr.status != 200) {
                                 failure('HTTP Error: ' + xhr.status);
@@ -123,22 +130,22 @@
                         formData.append('file', blobInfo.blob(), blobInfo.filename());
                         xhr.send(formData);
                     },
-                    file_picker_callback: function(cb, value, meta) {
+                    file_picker_callback: function (cb, value, meta) {
 
                         var input = document.createElement('input');
                         input.setAttribute('type', 'file');
                         input.setAttribute('accept', 'image/*');
-                        input.onchange = function() {
+                        input.onchange = function () {
                             var file = this.files[0];
                             var reader = new FileReader();
                             reader.readAsDataURL(file);
                             reader.onload = function () {
-                                var id = 'blobid' + (new Date()).getTime()+file.name;
-                                var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                                var id = 'blobid' + (new Date()).getTime() + file.name;
+                                var blobCache = tinymce.activeEditor.editorUpload.blobCache;
                                 var base64 = reader.result.split(',')[1];
                                 var blobInfo = blobCache.create(id, file, base64);
                                 blobCache.add(blobInfo);
-                                cb(blobInfo.blobUri(), { title: file.name });
+                                cb(blobInfo.blobUri(), {title: file.name});
                             };
                         };
                         input.click();
@@ -167,9 +174,7 @@
         jQuery(document).ready(function () {
             KTTinymce.init();
 
-
         });
-
 
     </script>
 

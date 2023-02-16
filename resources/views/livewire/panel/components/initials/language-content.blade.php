@@ -43,7 +43,14 @@
 
                     <td style="flex-basis: 33.3333%;">
                         <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.created_at'):</span>
-                        {{\App\Http\Helpers\DateTimeHelper::greToJalali($mainItem->created_at,'/',true)}}
+
+
+                        @if(app()->getLocale() == 'fa')
+                            {{\App\Http\Helpers\DateTimeHelper::greToJalali($mainItem->created_at,'/',true)}}
+                        @else
+                            {{$mainItem->created_at}}
+                        @endif
+
                     </td>
 
 

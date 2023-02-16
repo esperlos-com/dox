@@ -1,7 +1,9 @@
 <div>
     <div class="page-header">
 
-        <x-breadcrumb title="اسناد" :items="['اسناد','مدیریت اسناد']"/>
+
+        <x-breadcrumb title="panel/global.document.content.title"
+                      :items="['panel/global.document.breadcrumbs.subtitle2','panel/global.document.breadcrumbs.subtitle1']"/>
     </div>
 
     @if(request()->id)

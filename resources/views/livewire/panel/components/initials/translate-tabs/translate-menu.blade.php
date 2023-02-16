@@ -1,4 +1,4 @@
-<div class="card">
+<div>
 
 
     <div class="form-group">
@@ -7,6 +7,7 @@
 
 
     <table class="table table-bordered table-striped table-responsive-stack">
+
         <thead wire:ignore class="thead-dark">
         <tr>
             <th style="flex-basis: 33.3333%;">@lang('panel/global.table_header.main_text')</th>
@@ -17,15 +18,15 @@
         <tbody>
 
         @foreach($menus as $mainItem)
-            <tr>
+            <tr >
 
 
-                <td style="flex-basis: 33.3333%;">
+                <td class="table-long-length-text" style="flex-basis: 33.3333%;">
                     <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.main_text'):</span>
                     {{$mainItem->title}}
                 </td>
 
-                <td style="flex-basis: 33.3333%;">
+                <td class="table-long-length-text" style="flex-basis: 33.3333%;">
                     <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.translated_text'):</span>
                     {{$mainItem->menu_tl?->title}}
                 </td>

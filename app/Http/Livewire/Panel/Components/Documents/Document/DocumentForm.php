@@ -20,7 +20,7 @@ class DocumentForm extends Component
     public $previousUrl;
     public $requestId;
     public bool $isFromTranslate = false;
-
+    public string $translatedContent;
 
     public Document $document;
     public Setting $setting;
@@ -50,9 +50,7 @@ class DocumentForm extends Component
         $this->previousUrl = url()->previous();
         $this->requestId = request()->id;
 
-        if(request()->type === 'translate'){
-            $this->isFromTranslate = true;
-        }
+
 
         $this->setting = Setting::find(1);
 
@@ -62,10 +60,20 @@ class DocumentForm extends Component
         if (request()->id != -1) {
             $this->document = Document::find(request()->id);
 
+            if(request()->type === 'translate'){
+                $this->isFromTranslate = true;
+
+                $documentTl = DocumentTl::where('document_id',request()->id)->where('language_id',$this->setting->language_id)->first();
+
+                $this->translatedContent = $documentTl->content;
+
+            }
+
         } else {
             $this->document = new Document();
 
         }
+
 
 
     }
@@ -84,7 +92,7 @@ class DocumentForm extends Component
 
             $documentTl->language_id = $this->setting->language_id;
             $documentTl->document_id = $this->requestId;
-            $documentTl->content = $this->document->content;
+            $documentTl->content = $this->translatedContent;
 
             $documentTl->save();
 

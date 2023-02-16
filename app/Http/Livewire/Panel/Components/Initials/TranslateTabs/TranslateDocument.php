@@ -9,9 +9,13 @@ use App\Models\Menu;
 use App\Models\DocumentTl;
 use App\Models\Setting;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class TranslateDocument extends Component
 {
+
+    use WithPagination;
+
     public $selectedItemId;
 
     public string $search = '';
@@ -25,6 +29,10 @@ class TranslateDocument extends Component
     ];
 
 
+    public function paginationView()
+    {
+        return 'components.pagination-view';
+    }
 
 
 
@@ -53,8 +61,6 @@ class TranslateDocument extends Component
     public function submit()
     {
 
-
-
         $this->documentTl->language_id = $this->setting->language_id;
         $this->documentTl->menu_id = $this->selectedItemId;
 
@@ -80,7 +86,7 @@ class TranslateDocument extends Component
     public function render()
     {
 
-        $documents = Document::with(['document_tl'=>function($query){
+        $documents = Document::with(['menu','document_tl'=>function($query){
             $query->where('language_id', $this->setting->language_id);
         }])->where('content', 'LIKE', '%' . $this->search . '%')->paginate(Show::PAGINATE_COUNT);
 

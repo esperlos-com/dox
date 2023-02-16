@@ -25,42 +25,46 @@
                 </thead>
                 <tbody>
 
-                @foreach($documents as $mainItems)
+                @foreach($documents as $mainItem)
                     <tr>
 
                         <td style="flex-basis: 33.3333%;">
                             <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.id'):</span>
-                            {{$mainItems->id}}
+                            {{$mainItem->id}}
                         </td>
 
                         <td style="flex-basis: 33.3333%;">
                             <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.menu'):</span>
-                            {{$mainItems->menu->title}}
+                            {{$mainItem->menu->title}}
                         </td>
 
                         <td class="table-long-length-text" style="flex-basis: 33.3333%;">
                             <span  class="table-responsive-stack-thead " style="display: none; ">@lang('panel/global.table_header.content'):</span>
-                            {!! strip_tags($mainItems->content) !!}
+                            {!! strip_tags($mainItem->content) !!}
                         </td>
 
 
                         <td style="flex-basis: 33.3333%;">
                             <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.created_at'):</span>
-                            {{\App\Http\Helpers\DateTimeHelper::greToJalali($mainItems->created_at,'/',true)}}
+                            @if(app()->getLocale() == 'fa')
+                                {{\App\Http\Helpers\DateTimeHelper::greToJalali($mainItem->created_at,'/',true)}}
+                            @else
+                                {{$mainItem->created_at}}
+                            @endif
                         </td>
 
 
                         <td style="flex-basis: 33.3333%;">
                             <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.actions'):</span>
 
-                            <a href="{{$urlWithoutParam.$mainItems->id}}"
-                               class="btn btn-success text-white ">
+                            <a href="{{$urlWithoutParam.$mainItem->id}}"
+                               class="btn btn-success text-white mx-1">
                                 <i class="ti-pencil"></i>
                             </a>
 
                             <a data-toggle="modal" data-target="#deleteModal"
-                               wire:click.prevent="selectedItem({{$mainItems->id}})"
-                               class="btn btn-danger text-white">
+                               wire:click.prevent="selectedItem({{$mainItem->id}})"
+                               class="btn btn-danger text-white mx-1">
                                 <i class="ti-trash"></i>
                             </a>
 

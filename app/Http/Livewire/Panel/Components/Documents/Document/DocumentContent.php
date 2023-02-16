@@ -59,7 +59,6 @@ class DocumentContent extends Component
         } else {
             $this->document = Document::find($id);
 
-
         }
 
     }

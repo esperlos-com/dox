@@ -45,11 +45,23 @@
 
     /*------------- side menu (sub menü arrow) -------------*/
     wind_.on('load', function () {
+
+
         setTimeout(function () {
             $('.side-menu .side-menu-body ul li a').each(function () {
                 var $this = $(this);
                 if ($this.next('ul').length) {
-                    $this.append('<i class="sub-menu-arrow ti-angle-left"></i>');
+
+
+
+                    if($('body').css('direction') == 'rtl'){
+                        $this.append('<i class="sub-menu-arrow ti-angle-left"></i>');
+                    }
+                    if($('body').css('direction') == 'ltr'){
+                        $this.append('<i class="sub-menu-arrow ti-angle-right"></i>');
+                    }
+
+
                     if (body_.hasClass('horizontal-side-menu')) {
                         $('.side-menu .side-menu-body > ul > li > a > .sub-menu-arrow').removeClass('ti-angle-left').addClass('ti-angle-down');
 

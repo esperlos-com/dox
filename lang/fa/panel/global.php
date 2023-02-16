@@ -2,10 +2,14 @@
 
 return [
     'app_name' => 'داکس',
+    'loading' => 'در حال بارگذاری ...',
+    'profile' => 'پروفایل',
+    'setting' => 'تنظیمات',
+    'logout' => 'خروج',
     'alert' => [
         'success' => 'عملیات با موفقیت انجام شد'
     ],
-    'search'=>'جستجو...',
+    'search' => 'جستجو...',
     'button' => [
         'yes' => 'بله',
         'no' => 'خیر',
@@ -35,13 +39,57 @@ return [
             'translate' => 'ترجمه',
             'documents' => 'اسناد',
             'menus' => 'فهرست ها',
-            'medium' => 'رسانه',
+            'media' => 'رسانه',
 
+        ]
+    ],
+    'dashboard' => [
+        'first_box' => [
+            'title' => 'داکس فوق العادست',
+            'content' => 'با داکس، اسنادت رو به راحتی به اشتراک بذار ;)'
         ]
     ],
     'document' => [
         'content' => [
             'title' => 'لیست اسناد',
+        ],
+        'form' => [
+            'title'=>'ثبت سند',
+            'content' => 'محتوا',
+            'menu' => 'منو',
+            'select_menu' => "منو را انتخاب کنید"
+        ],
+        'breadcrumbs' => [
+            'title' => 'اسناد',
+            'subtitle1' => 'مدیریت اسناد',
+            'subtitle2' => 'اسناد',
+        ]
+    ],
+    'menu' => [
+        'content' => [
+            'title' => 'لیست منوها',
+
+        ],
+        'add_submenu_modal' => [
+            'title' => 'افزودن زیرمنو',
+            'form' => [
+                'title' => 'عنوان',
+                'slug' => 'شناسه لینک(در صورتی که زیرمنو نباشد)'
+            ],
+        ],
+
+        'add_modal' => [
+            'title' => 'افزودن منو',
+            'form' => [
+                'title' => 'عنوان',
+                'slug' => 'شناسه لینک(در صورتی که زیرمنو نباشد)'
+            ],
+        ],
+
+        'breadcrumbs' => [
+            'title' => 'منو',
+            'subtitle1' => 'مدیریت منو ها',
+            'subtitle2' => 'منو',
         ]
     ],
     'language' => [
@@ -90,6 +138,17 @@ return [
             'title' => 'نسخه',
             'subtitle1' => 'مدیریت نسخه ها',
             'subtitle2' => 'نسخه',
+        ]
+    ],
+
+    'media' => [
+        'content' => [
+            'title' => 'لیست رسانه',
+        ],
+        'breadcrumbs' => [
+            'title' => 'رسانه',
+            'subtitle1' => 'مدریت رسانه',
+            'subtitle2' => 'رسانه',
         ]
     ]
 ];
