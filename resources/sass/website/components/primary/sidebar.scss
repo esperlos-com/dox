@@ -5,24 +5,39 @@
     top: 64px;
     bottom: 0;
     padding-bottom: 64px;
-    ul {
+    overflow: scroll;
+
+    > ul {
         margin-inline-start: $main-container-space;
         margin-top: $main-container-space;
+
+        > li {
+            margin-top: 14px;
+
+            > a {
+                margin-inline-start: 16px;
+
+            }
+        }
     }
 }
 
 body[class *= "direction-rtl"] #aside {
     direction: ltr;
+
+    > ul {
+        direction: rtl;
+    }
 }
+
 
 body[class *= "direction-ltr"] #aside {
     direction: rtl;
-}
 
-#aside{
-    overflow: scroll;
+    > ul {
+        direction: ltr;
+    }
 }
-
 
 
 @media screen and (min-width: $break-point-lg) {

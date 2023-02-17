@@ -10,38 +10,23 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-/*
-
-mix.minify([
-    'resources/assets/js/alerts.js',
-    'resources/assets/js/app.js',
-    'resources/assets/js/custom.js',
-    'resources/assets/js/website/expandable-menu.js',
-    'resources/assets/js/website/drawer/drawer.js',
-    'resources/assets/css/custom.css',
-    'resources/assets/css/app2.css',
-    'resources/assets/css/website/app2.css',
-    'resources/assets/css/website/components.css',
-    'resources/assets/css/website/responsive.css',
-    'resources/assets/css/website/variables.css',
-    'resources/assets/css/website/markap-icons/markap-icons.css',
-]);
 
 
-mix.combine([
-    'resources/assets/css/custom.css',
-    'resources/assets/css/app2.css',
-    'resources/assets/css/website/app2.css',
-    'resources/assets/css/website/components.css',
-    'resources/assets/css/website/responsive.css',
-    'resources/assets/css/website/variables.css',
-    'resources/assets/css/website/markap-icons/markap-icons.css',
-],'resources/css/app2.css');
+
+let assetDir = 'assets';
+mix.options({
+    fileLoaderDirs: {
+        fonts: `${assetDir}/fonts`
+    }
+});
 
 
-mix.minify([
-    'resources/css/app2.css',
-]);
-*/
+mix.sass('resources/sass/website/app.scss','public/assets/css/website')
+    .sass('resources/sass/panel/app.scss','public/assets/css/panel')
+    .sass('resources/sass/panel/style-ltr.scss','public/assets/css/panel')
 
-mix.sass('resources/sass/website/app.scss','public/assets/css/website');
+mix.js('resources/js/panel/alerts.js','public/assets/js/panel')
+    .js('resources/js/panel/app.js','public/assets/js/panel')
+
+
+

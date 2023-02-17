@@ -10,9 +10,9 @@
     @livewireStyles
 
     <link rel="stylesheet" href="{{asset('assets/vendors/bundle.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/css/app.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/panel/app.css')}}" type="text/css">
     @if(app()->getLocale() != 'fa')
-        <link rel="stylesheet" href="{{asset('assets/css/style-ltr.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('assets/css/panel/style-ltr.css')}}" type="text/css">
     @endif
 
 
@@ -40,7 +40,7 @@
 
     {{$slot}}
 
-
+        <i class="fa fa-close"></i>
     </div>
 
 </main>
@@ -53,8 +53,8 @@
 @livewireScripts
 
 <script src="{{asset('assets/vendors/bundle.js')}}"></script>
-<script src="{{asset('assets/js/app.js')}}"></script>
-<script src="{{asset('assets/js/alerts.js')}}"></script>
+<script src="{{asset('assets/js/panel/app.js')}}"></script>
+<script src="{{asset('assets/js/panel/alerts.js')}}"></script>
 @stack('custom-scripts')
 
 </body>

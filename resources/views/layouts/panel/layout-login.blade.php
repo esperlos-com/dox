@@ -29,8 +29,8 @@
 @livewireScripts
 
 <script src="{{asset('assets/vendors/bundle.js')}}"></script>
-<script src="{{asset('assets/js/app.js')}}"></script>
-<script src="{{asset('assets/js/alerts.js')}}"></script>
+<script src="{{asset('assets/js/customs/panel/app.js')}}"></script>
+<script src="{{asset('assets/js/customs/panel/alerts.js')}}"></script>
 
 
 </body>
