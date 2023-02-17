@@ -40,7 +40,6 @@
 
     {{$slot}}
 
-        <i class="fa fa-close"></i>
     </div>
 
 </main>
