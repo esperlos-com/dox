@@ -57,12 +57,7 @@
                     <div class="form-group">
                         <label for="content">@lang('panel/global.document.form.content')</label>
                         <textarea
-                            @if($isFromTranslate)
-                            wire:model.defer="translatedContent"
-                            @else
                             wire:model.defer="document.content"
-                            @endif
-
                             id="content"></textarea>
                     </div>
                 </div>
@@ -97,8 +92,8 @@
                     images_file_types: 'jpeg,jpg,png,gif',
                     toolbar: ['styleselect fontselect fontsizeselect',
                         'undo redo | cut copy paste | bold italic | link image | alignleft aligncenter alignright alignjustify',
-                        'bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code | anchor | codesample | ltr rtl'],
-                    plugins: 'advlist autolink link image lists charmap print preview code anchor codesample directionality',
+                        'bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code | anchor | codesample | ltr rtl | pageembed'],
+                    plugins: 'advlist autolink link image lists charmap print preview code anchor codesample directionality pageembed',
                     image_title: true,
                     automatic_uploads: true,
                     images_upload_url: 'upload',

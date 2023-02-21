@@ -1,6 +1,7 @@
 body {
   direction: ltr;
   font-family: "segoe ui", "tahoma";
+  text-align: start !important;
 }
 
 .side-menu {

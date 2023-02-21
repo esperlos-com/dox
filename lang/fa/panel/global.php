@@ -6,6 +6,7 @@ return [
     'profile' => 'پروفایل',
     'setting' => 'تنظیمات',
     'logout' => 'خروج',
+
     'alert' => [
         'success' => 'عملیات با موفقیت انجام شد'
     ],
@@ -15,6 +16,7 @@ return [
         'no' => 'خیر',
         'close' => 'بستن',
         'submit' => 'ثبت',
+        'login' => 'ورود',
     ],
 
     'table_header' => [
@@ -28,6 +30,15 @@ return [
         'translated_text' => 'متن ترجمه',
     ],
 
+
+    'login' => [
+        'title' => 'مدیریت داکس',
+        'form' => [
+            'title' => 'داکس یک قدم برای بهتر شدن دنیاست',
+            'username' => 'ایمیل',
+            'password'=>'رمز عبور'
+        ]
+    ],
 
     'sidebar' => [
         'head' => 'فهرست',

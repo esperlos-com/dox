@@ -1,7 +1,6 @@
 #aside {
     background: $primary-light;
     position: fixed;
-    width: 300px;
     top: 64px;
     bottom: 0;
     padding-bottom: 64px;
@@ -9,6 +8,7 @@
 
     > ul {
         margin-inline-start: $main-container-space;
+        margin-inline-end: $main-container-space;
         margin-top: $main-container-space;
 
         > li {

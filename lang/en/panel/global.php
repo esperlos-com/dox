@@ -2,11 +2,12 @@
 
 return [
 
-    'app_name' => 'dox',
+    'app_name' => 'DOX',
     'loading' => 'loading...',
     'profile' => 'profile',
     'setting' => 'setting',
     'logout' => 'logout',
+
     'alert' => [
         'success' => 'operation done successfully'
     ],
@@ -16,6 +17,7 @@ return [
         'no' => 'no',
         'close' => 'close',
         'submit' => 'submit',
+        'login' => 'login',
     ],
 
     'table_header' => [
@@ -30,6 +32,17 @@ return [
 
 
     ],
+
+
+    'login' => [
+        'title' => 'manage dox',
+        'form' => [
+            'title' => 'dox is a step to make the world better',
+            'username' => 'email',
+            'password'=>'password'
+        ]
+    ],
+
 
     'sidebar' => [
         'head' => 'index',
@@ -60,7 +73,7 @@ return [
             ]
         ],
         'form' => [
-            'title'=>'submit document',
+            'title' => 'submit document',
             'content' => 'content',
             'menu' => 'menu',
             'select_menu' => "select menu"
@@ -80,14 +93,14 @@ return [
             'title' => 'add submenu',
             'form' => [
                 'title' => 'title',
-                'slug' =>'slug (if it is not submenu)'
+                'slug' => 'slug (if it is not submenu)'
             ],
         ],
         'add_modal' => [
             'title' => 'add menu',
             'form' => [
                 'title' => 'title',
-                'slug' =>'slug (if it is not submenu)'
+                'slug' => 'slug (if it is not submenu)'
             ],
         ],
         'breadcrumbs' => [
@@ -153,7 +166,6 @@ return [
             'subtitle2' => 'media',
         ]
     ]
-
 
 
 ];

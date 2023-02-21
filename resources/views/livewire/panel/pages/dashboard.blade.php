@@ -7,14 +7,7 @@
     <div class="page-header">
 
 
-        <div class="btn-group" role="group">
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="#">عمل</a>
-                <a class="dropdown-item" href="#">عمل دیگر</a>
-                <a class="dropdown-item" href="#">یک عمل دیگر</a>
-            </div>
-        </div>
-    </div>
+
     <!-- end::page header -->
 
     <div class="row">

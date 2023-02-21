@@ -11,7 +11,10 @@
     @livewireStyles
 
     <link rel="stylesheet" href="{{asset('assets/vendors/bundle.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/css/app.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/panel/app.css')}}" type="text/css">
+    @if(app()->getLocale() != 'fa')
+        <link rel="stylesheet" href="{{asset('assets/css/panel/style-ltr.css')}}" type="text/css">
+    @endif
 
 </head>
 <body class="bg-white h-100-vh p-t-0">
@@ -19,7 +22,7 @@
 <!-- begin::page loader-->
 <div class="page-loader">
     <div class="spinner-border"></div>
-    <span>در حال بارگذاری ...</span>
+    <span>@lang('panel/global.loading')</span>
 </div>
 <!-- end::page loader -->
 
@@ -29,8 +32,8 @@
 @livewireScripts
 
 <script src="{{asset('assets/vendors/bundle.js')}}"></script>
-<script src="{{asset('assets/js/customs/panel/app.js')}}"></script>
-<script src="{{asset('assets/js/customs/panel/alerts.js')}}"></script>
+<script src="{{asset('assets/js/panel/app.js')}}"></script>
+<script src="{{asset('assets/js/panel/alerts.js')}}"></script>
 
 
 </body>

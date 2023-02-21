@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class DocumentTl
- * 
+ *
  * @property int $document_id
  * @property string $language_id
  * @property string|null $content
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Document $document
  * @property Language $language
  *
@@ -27,6 +27,7 @@ class DocumentTl extends Model
 {
 	protected $table = 'document_tl';
 	public $incrementing = false;
+    public $primaryKey  = 'document_id';
 
 	protected $casts = [
 		'document_id' => 'int'

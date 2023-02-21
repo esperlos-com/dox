@@ -1,6 +1,6 @@
 <div class="row {{\App\Http\Helpers\DocumentHelper::getLanguage() == 'fa'?'rtl':'ltr'}}">
 
-    <aside id="aside" class="colb-xxl-2 colb-xl-2 colb-lg-2 colb-md-4 colb-sm-2 " >
+    <aside id="aside" class="colb-xxl-3 colb-xl-3 colb-lg-3 colb-md-3 colb-sm-3 " >
         <ul>
             @foreach($menus as $item)
 
@@ -31,7 +31,7 @@
         </ul>
     </aside>
 
-    <div id="content" class="colb-xxl-10 colb-xl-10 colb-lg-10 colb-md-10 colb-sm-10 " style="background: white">
+    <div id="content" class="colb-xxl-9 colb-xl-9 colb-lg-9 colb-md-9 colb-sm-9 " style="background: white">
         <div class="box-padding">
             {!! $document->document_tl->content??$document?->content !!}
         </div>

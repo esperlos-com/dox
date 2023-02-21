@@ -16,7 +16,7 @@
        </div>
 
         <div>
-            <h1 class="logo">DOX</h1>
+            <h1 class="logo">{{\App\Http\Helpers\Strings::appName()}}</h1>
         </div>
 
     </nav>
