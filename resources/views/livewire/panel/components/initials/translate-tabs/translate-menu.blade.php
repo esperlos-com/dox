@@ -2,7 +2,7 @@
 
 
     <div class="form-group">
-        <input wire:key="translate.document" wire:model.debounce500="search" class="form-control" type="text" placeholder="@lang('panel/global.search')">
+        <input wire:key="translate.menu" wire:model.debounce500="search" class="form-control" type="text" placeholder="@lang('panel/global.search')">
     </div>
 
 

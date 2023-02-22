@@ -149,11 +149,14 @@ return [
 
     'attributes' => [
         'document.content'=>'content',
+        'document.menu_id' => 'menu',
         'language.title'=>'title',
         'language.id' => 'identifier',
         'documentTl.content' => 'translate text',
         'menuTl.title' => 'translate text',
         'version.title' => 'title',
+        'menu.title' => 'title',
+        'menu.slug' => 'slug',
     ],
 
 ];

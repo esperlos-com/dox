@@ -30,11 +30,6 @@ class MenuContent extends Component
         'menu.slug' => 'required',
     ];
 
-    protected $validationAttributes = [
-        'menu.title' => 'عنوان',
-        'menu.slug' => 'شناسه لینک',
-
-    ];
 
 
 

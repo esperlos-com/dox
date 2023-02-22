@@ -149,11 +149,15 @@ return [
 
     'attributes' => [
         'document.content'=>'محتوا',
+        'document.menu_id' => 'منو',
         'language.title'=>'عنوان',
         'language.id' => 'شناسه',
         'documentTl.content' => 'متن ترجمه',
         'menuTl.title' => 'متن ترجمه',
         'version.title' => 'عنوان',
+        'menu.title' => 'عنوان',
+        'menu.slug' => 'شناسه لینک',
+
     ],
 
 ];

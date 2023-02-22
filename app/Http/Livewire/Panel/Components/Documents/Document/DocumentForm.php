@@ -35,10 +35,7 @@ class DocumentForm extends Component
 
     ];
 
-    protected $validationAttributes = [
 
-        'document.menu_id' => 'منو',
-    ];
 
 
 

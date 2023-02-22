@@ -23,7 +23,7 @@
 
                 <td class="table-long-length-text" style="flex-basis: 33.3333%;">
                     <span class="table-responsive-stack-thead" style="display: none;">@lang('panel/global.table_header.menu'):</span>
-                    {!! strip_tags($mainItem->menu->title) !!}
+                    {!! strip_tags($mainItem->menu?->title) !!}
                 </td>
 
                 <td class="table-long-length-text" style="flex-basis: 33.3333%;">

@@ -86,9 +86,13 @@ class TranslateDocument extends Component
     public function render()
     {
 
-        $documents = Document::with(['menu','document_tl'=>function($query){
+        $documents = Document::with(['menu'=>function($query){
+            $query->where('title', 'LIKE', '%' . $this->search . '%');
+        },'document_tl'=>function($query){
             $query->where('language_id', $this->setting->language_id);
-        }])->where('content', 'LIKE', '%' . $this->search . '%')->paginate(Show::PAGINATE_COUNT);
+        }])->where('content', 'LIKE', '%' . $this->search . '%')
+
+            ->paginate(Show::PAGINATE_COUNT);
 
         return view('livewire.panel.components.initials.translate-tabs.translate-document',compact('documents'));
     }
