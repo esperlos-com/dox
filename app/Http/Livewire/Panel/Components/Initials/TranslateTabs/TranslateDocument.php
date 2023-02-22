@@ -91,7 +91,6 @@ class TranslateDocument extends Component
         },'document_tl'=>function($query){
             $query->where('language_id', $this->setting->language_id);
         }])->where('content', 'LIKE', '%' . $this->search . '%')
-
             ->paginate(Show::PAGINATE_COUNT);
 
         return view('livewire.panel.components.initials.translate-tabs.translate-document',compact('documents'));
