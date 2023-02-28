@@ -14,7 +14,7 @@
 
                     @if($submenuItem->pid == $item->id)
                         <li value="{{ $submenuItem->id }}">
-                            <a href="{{ request()->getSchemeAndHttpHost().'/docs/'.$submenuItem->slug}}">
+                            <a href="{{ request()->getSchemeAndHttpHost().\App\Http\Helpers\Strings::DOCUMENT_URL_PREFIX.$submenuItem->slug}}">
                                 &nbsp;&nbsp;&nbsp;{{$submenuItem->menu_tl->title??$submenuItem->title }}
                             </a>
 

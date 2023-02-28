@@ -30,7 +30,8 @@ Route::group(
         'namespace' => '\App\Http\Livewire\Website\Pages',
     ], function () {
 
-    Route::get('/docs/{slug}', DocumentHome::class)->name('docs');
+
+    Route::get('docs/{slug?}', DocumentHome::class)->name('docs');
 
 
 });

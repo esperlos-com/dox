@@ -25,6 +25,11 @@ class Content extends Component
 
         $this->slug = request()->slug;
 
+        if(!isset($this->slug)){
+            $this->slug = Menu::where('pid','!=',null)->first()->slug;
+
+        }
+
         $this->menu = Menu::where('slug', $this->slug)->first();
 
 
@@ -54,7 +59,6 @@ class Content extends Component
 
     public function render()
     {
-
 
 
 
