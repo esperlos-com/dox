@@ -9,9 +9,7 @@ use Livewire\Component;
 
 class Header extends Component
 {
-    protected $except = [
-        'livewire/*',
-    ];
+
 
     public $currentUrl;
 
