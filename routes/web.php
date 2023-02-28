@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('login', ['as' => 'login', 'uses' => \App\Http\Livewire\Panel\Pages\Login::class]);
+Route::get('admin-login', ['as' => 'login', 'uses' => \App\Http\Livewire\Panel\Pages\Login::class]);
 
 
 
