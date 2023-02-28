@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('docs/authenticate/login', ['as' => 'login', 'uses' => \App\Http\Livewire\Panel\Pages\Login::class]);
+Route::get('login', ['as' => 'login', 'uses' => \App\Http\Livewire\Panel\Pages\Login::class]);
 
 
 
