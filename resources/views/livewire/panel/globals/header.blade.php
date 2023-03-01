@@ -53,7 +53,7 @@
             <div class="header-logo">
                 <a href="#">
 {{--                    <img src="{{asset('assets/media/image/logo.png')}}" alt="...">--}}
-                    <span class="logo-text d-none d-lg-block">@lang('panel/global.app_name')</span>
+                    <span class="logo-text d-none d-lg-block">{{\App\Http\Helpers\Strings::appName()}}</span>
                 </a>
             </div>
 
