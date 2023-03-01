@@ -31,7 +31,7 @@ Route::group(
     ], function () {
 
 
-    Route::get('docs/{slug?}', DocumentHome::class)->name('docs');
+    Route::get(\App\Http\Helpers\Strings::DOCUMENT_URL_PREFIX.'{slug?}', DocumentHome::class)->name('docs');
 
 
 });
