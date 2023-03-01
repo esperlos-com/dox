@@ -11,7 +11,7 @@ class Strings
     const DOCUMENT_URL_PREFIX = "/docs/";
 
     public static function appName(){
-        return Lang::get('panel/global.app_name');
+        return Lang::get('panel/custom.app_name');
     }
 
     public static function successMessage(){

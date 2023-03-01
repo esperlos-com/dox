@@ -1,5 +1,8 @@
 /node_modules
 /public/hot
+/app/Http/Helpers/Strings.php
+/lang/en/panel/custom.php
+/lang/fa/panel/custom.php
 /public/storage
 /storage/*.key
 /vendor

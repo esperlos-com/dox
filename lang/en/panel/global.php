@@ -2,7 +2,6 @@
 
 return [
 
-    'app_name' => 'DOX',
     'loading' => 'loading...',
     'profile' => 'profile',
     'setting' => 'setting',

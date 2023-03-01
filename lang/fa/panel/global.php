@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'app_name' => 'داکس',
     'loading' => 'در حال بارگذاری ...',
     'profile' => 'پروفایل',
     'setting' => 'تنظیمات',
