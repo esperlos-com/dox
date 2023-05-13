@@ -17,35 +17,33 @@ class Content extends Component
 
     public Document $document;
 
-    public function mount(){
+    public function mount()
+    {
 
 
         $this->slug = request()->slug;
 
-        if(!isset($this->slug)){
-            $this->slug = Menu::where('pid','!=',null)->first()->slug;
+        if (!isset($this->slug)) {
+            $this->slug = Menu::where('pid', '!=', null)->first()->slug;
 
         }
 
-        $this->menu = Menu::with(['menu_tl'=>function($query){
-            $query->where('language_id',DocumentHelper::getLanguage());
+        $this->menu = Menu::with(['menu_tl' => function ($query) {
+            $query->where('language_id', DocumentHelper::getLanguage());
         }])->where('slug', $this->slug)->first();
-
 
 
         $this->breadcrumb = $this->makeBreadcrumbs($this->menu);
 
 
+        $this->document = Document::with(['document_tl' => function ($query) {
+            $query->where('language_id', DocumentHelper::getLanguage());
+        }])->where('menu_id', $this->menu->id)
+            ->where('version_id', DocumentHelper::getVersion())
+            ->first() ?? $this->getFirstDocumentExistInOtherVersions();
 
-
-        $this->document = Document::with(['document_tl'=>function($query){
-                $query->where('language_id',DocumentHelper::getLanguage());
-            }])->where('menu_id', $this->menu->id)
-            ->where('version_id',DocumentHelper::getVersion())
-            ->first()?? new Document();
 
     }
-
 
 
     public function render()
@@ -54,16 +52,29 @@ class Content extends Component
         return view('livewire.website.components.document-home.content');
     }
 
-    private function makeBreadcrumbs($menu){
+    private function makeBreadcrumbs($menu)
+    {
 
-        $parent = Menu::with(['menu_tl'=>function($query){
-            $query->where('language_id',DocumentHelper::getLanguage());
+        $parent = Menu::with(['menu_tl' => function ($query) {
+            $query->where('language_id', DocumentHelper::getLanguage());
         }])->where('id', $menu->pid)->first();
 
-        $breadcrumb['title'] =  $parent->menu_tl->title??$parent->title;
-        $breadcrumb['child'] =  ['title'=>$menu->menu_tl->title??$menu->title];
+        $breadcrumb['title'] = $parent->menu_tl->title ?? $parent->title;
+        $breadcrumb['child'] = ['title' => $menu->menu_tl->title ?? $menu->title];
 
         return $breadcrumb;
     }
 
+    private function getFirstDocumentExistInOtherVersions()
+    {
+
+        $lastVersionExist = Document::where('menu_id', $this->menu->id)->first()->version_id;
+
+
+        return Document::with(['document_tl' => function ($query) {
+            $query->where('language_id', DocumentHelper::getLanguage());
+        }])->where('menu_id', $this->menu->id)
+            ->where('version_id', $lastVersionExist)
+            ->first();
+    }
 }
