@@ -50,10 +50,12 @@ class Sidebar extends Component
     public function render()
     {
 
-
+        // default language is en
         $menus = Menu::with(['menu_tl'=>function($query){
-            $query->where('language_id',DocumentHelper::getLanguage());
+            $query->where('language_id',app()->getLocale());
         },'submenus.menu_tl'])->where('pid'.null)->orderBy('order')->get();
+
+
 
         return view('livewire.website.components.document-home.sidebar',compact('menus'));
     }

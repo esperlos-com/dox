@@ -9,7 +9,7 @@
                     <li>
                         <a href="#{{$item->slug}}" data-parent="#accordion" data-toggle="collapse"
                            class=" d-flex justify-content-between list-group-item @if($parent->slug != $item->slug) collapsed @endif  pb-2 pt-0">
-                            {{$item->menu_tl->title??$item->title}}
+                            {{\App\Http\Helpers\DocumentHelper::isDefaultLanguage()?$item->title: $item->menu_tl->title??$item->title}}
                         </a>
 
 
@@ -19,7 +19,8 @@
                                 @foreach($item->submenus as $submenu)
                                     <li >
                                         <a class="@if($menu->slug == $submenu->slug) link-selected-color @endif"
-                                            href="{{ request()->getSchemeAndHttpHost().\App\Http\Helpers\Strings::DOCUMENT_URL_PREFIX.$submenu->slug}}">{{$submenu->menu_tl->title??$submenu->title}}
+                                            href="{{ request()->getSchemeAndHttpHost().\App\Http\Helpers\Strings::DOCUMENT_URL_PREFIX.$submenu->slug}}">
+                                            {{\App\Http\Helpers\DocumentHelper::isDefaultLanguage()?$submenu->title: $submenu->menu_tl->title??$submenu->title }}
                                         </a>
                                     </li>
                                 @endforeach

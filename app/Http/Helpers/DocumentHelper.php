@@ -58,5 +58,9 @@ class DocumentHelper
 
 
 
+    public static function isDefaultLanguage(){
+        // default language is en
+        return app()->getLocale() == 'en';
+    }
 
 }
