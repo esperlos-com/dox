@@ -9,7 +9,8 @@
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "hekmatinasser/verta": "^1.11.1"
+        "hekmatinasser/verta": "^1.11.1",
+        "stevebauman/location": "^6.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

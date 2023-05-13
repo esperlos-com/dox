@@ -22,11 +22,10 @@ mix.options({
 
 
 mix.sass('resources/sass/website/app.scss','public/assets/css/website')
-    .sass('resources/sass/panel/app.scss','public/assets/css/panel')
-    .sass('resources/sass/panel/style-ltr.scss','public/assets/css/panel')
 
 mix.js('resources/js/panel/alerts.js','public/assets/js/panel')
     .js('resources/js/panel/app.js','public/assets/js/panel')
+    .js('resources/js/website/app.js','public/assets/js/website')
 
 
 

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('default_language_id',2);
             $table->string('language_id',2);
-            $table->bigInteger('version_id')->unsigned();
             $table->timestamps();
         });
     }

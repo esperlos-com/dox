@@ -11,7 +11,7 @@ Route::get('login', ['as' => 'login', 'uses' => \App\Http\Livewire\Panel\Pages\L
 Route::group(
     [
         'namespace' => '\App\Http\Livewire\Panel\Pages',
-        'middleware' => 'auth',
+        'middleware' => ['auth','database_read_language'],
     ], function () {
     Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('language-management', Initials\LanguageManagement::class)->name('language-management');
@@ -28,6 +28,7 @@ Route::group(
 Route::group(
     [
         'namespace' => '\App\Http\Livewire\Website\Pages',
+        'middleware' => ['session_read_language'],
     ], function () {
 
 

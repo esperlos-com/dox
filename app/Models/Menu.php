@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Menu
- * 
+ *
  * @property int $id
  * @property string|null $slug
  * @property int|null $pid
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $order
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Menu|null $menu
  * @property Collection|Document[] $documents
  * @property MenuTl $menu_tl
@@ -31,6 +31,8 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
 	protected $table = 'menus';
+
+
 
 	protected $casts = [
 		'pid' => 'int',
@@ -59,8 +61,11 @@ class Menu extends Model
 		return $this->hasOne(MenuTl::class);
 	}
 
-	public function menus()
+	public function submenus()
 	{
 		return $this->hasMany(Menu::class, 'pid');
 	}
+
+
+
 }

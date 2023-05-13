@@ -1,0 +1,37 @@
+body[class*="direction-ltr"] {
+    direction: ltr;
+    font-family: 'GoogleSans', sans-serif;
+}
+
+body[class*="direction-rtl"] {
+    direction: rtl;
+}
+
+
+body[class*="direction-rtl"] aside.hide {
+    transform: translateX(100%);
+}
+
+
+body[class*="direction-ltr"] aside.hide {
+    transform: translateX(-100%);
+
+}
+
+body[class*="direction-ltr"] #header .manage {
+
+    background: linear-gradient(90deg, $primary-color-light, $primary-color-dark);
+}
+
+body[class*="direction-rtl"] #header .manage {
+    background: linear-gradient(90deg, $primary-color-dark, $primary-color-light);
+}
+
+body[class*="direction-ltr"] #header .nav .shop a {
+    background: linear-gradient(90deg, $primary-color-light, $primary-color-dark);
+}
+
+body[class*="direction-rtl"] #header .nav .shop a {
+    background: linear-gradient(90deg, $primary-color-dark, $primary-color-light);
+}
+

@@ -12,13 +12,10 @@ class Content extends Component
 {
 
     public $slug;
+    public $menu;
+    public $breadcrumb;
 
     public Document $document;
-    public Menu $menu;
-
-
-    public $menus;
-    public $submenus;
 
     public function mount(){
 
@@ -30,28 +27,22 @@ class Content extends Component
 
         }
 
-        $this->menu = Menu::where('slug', $this->slug)->first();
-
-
-        $menuIdsInThisVersion = Document::where('version_id',DocumentHelper::getVersion())->pluck('menu_id')->toArray();
-
-
-        $this->menus = Menu::with(['menu_tl'=>function($query){
+        $this->menu = Menu::with(['menu_tl'=>function($query){
             $query->where('language_id',DocumentHelper::getLanguage());
-        }])->where('pid',null)->orderBy('order')->get();
+        }])->where('slug', $this->slug)->first();
 
 
-        $this->submenus = Menu::with(['menu_tl'=>function($query){
-            $query->where('language_id',DocumentHelper::getLanguage());
-        }])
-            ->where('pid','!=',null)
-            ->whereIn('id',$menuIdsInThisVersion)->orderBy('order')->get();
+
+        $this->breadcrumb = $this->makeBreadcrumbs($this->menu);
+
 
 
 
         $this->document = Document::with(['document_tl'=>function($query){
                 $query->where('language_id',DocumentHelper::getLanguage());
-            }])->where('menu_id', $this->menu->id)->first()?? new Document();
+            }])->where('menu_id', $this->menu->id)
+            ->where('version_id',DocumentHelper::getVersion())
+            ->first()?? new Document();
 
     }
 
@@ -60,8 +51,19 @@ class Content extends Component
     public function render()
     {
 
-
-
         return view('livewire.website.components.document-home.content');
     }
+
+    private function makeBreadcrumbs($menu){
+
+        $parent = Menu::with(['menu_tl'=>function($query){
+            $query->where('language_id',DocumentHelper::getLanguage());
+        }])->where('id', $menu->pid)->first();
+
+        $breadcrumb['title'] =  $parent->menu_tl->title??$parent->title;
+        $breadcrumb['child'] =  ['title'=>$menu->menu_tl->title??$menu->title];
+
+        return $breadcrumb;
+    }
+
 }

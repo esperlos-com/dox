@@ -31,12 +31,16 @@ class DocumentHelper
     public static function getLanguage(){
 
 
+
         if(session()->has('language')){
             return session()->get('language');
         }
 
+
+
         $defaultLanguage = Setting::find(1)->default_language_id;
         session()->put('language',$defaultLanguage);
+
         return $defaultLanguage;
 
     }

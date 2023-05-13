@@ -72,32 +72,6 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
-
-/***/ "./resources/sass/panel/app.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/panel/app.scss ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/sass/panel/style-ltr.scss":
-/*!*********************************************!*\
-  !*** ./resources/sass/panel/style-ltr.scss ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
 /***/ })
 
 /******/ 	});
@@ -187,8 +161,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/assets/js/panel/alerts": 0,
-/******/ 			"assets/css/panel/style-ltr": 0,
-/******/ 			"assets/css/panel/app": 0,
 /******/ 			"assets/css/website/app": 0
 /******/ 		};
 /******/ 		
@@ -239,10 +211,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/css/panel/style-ltr","assets/css/panel/app","assets/css/website/app"], () => (__webpack_require__("./resources/js/panel/alerts.js")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/panel/style-ltr","assets/css/panel/app","assets/css/website/app"], () => (__webpack_require__("./resources/sass/website/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/panel/style-ltr","assets/css/panel/app","assets/css/website/app"], () => (__webpack_require__("./resources/sass/panel/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/panel/style-ltr","assets/css/panel/app","assets/css/website/app"], () => (__webpack_require__("./resources/sass/panel/style-ltr.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/website/app"], () => (__webpack_require__("./resources/js/panel/alerts.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/website/app"], () => (__webpack_require__("./resources/sass/website/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

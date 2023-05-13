@@ -1,7 +1,6 @@
 {
     "/assets/js/panel/alerts.js": "/assets/js/panel/alerts.js",
     "/assets/js/panel/app.js": "/assets/js/panel/app.js",
-    "/assets/css/panel/style-ltr.css": "/assets/css/panel/style-ltr.css",
-    "/assets/css/panel/app.css": "/assets/css/panel/app.css",
+    "/assets/js/website/app.js": "/assets/js/website/app.js",
     "/assets/css/website/app.css": "/assets/css/website/app.css"
 }

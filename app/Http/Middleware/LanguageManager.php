@@ -22,7 +22,8 @@ class LanguageManager
         $setting = Setting::find(1);
 
         if ($setting) {
-            App::setLocale($setting->default_language_id);
+
+            app()->setLocale($setting->default_language_id);
         }
 
         return $next($request);
