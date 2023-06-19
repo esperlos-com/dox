@@ -193,7 +193,6 @@ aside.hide {
 .document-container > pre {
   background: #D1ECF1;
   text-align: start;
-  direction: rtl;
   padding: 12px;
 }
 

@@ -34,12 +34,3 @@ body[class*="direction-ltr"] #header .nav .shop a {
 body[class*="direction-rtl"] #header .nav .shop a {
     background: linear-gradient(90deg, $primary-color-dark, $primary-color-light);
 }
-
-body[class*="direction-ltr"] .document-container > pre {
-    direction: ltr !important;
-}
-
-body[class*="direction-rtl"] .document-container > pre {
-    direction: rtl !important;
-}
-
